@@ -18,12 +18,12 @@ public class Client {
             System.out.println("Сокет открыт");
             System.out.println("Потоки ввода/вывода созданы");
             System.out.print("""
-                    Клиент принимает натуральное число, сервер раскладывает его на простые сомножители согласно основной теореме арифметики.
-                    Чтобы закончить выполнение программы, введите 0/
+                    Клиент принимает натуральное число, сервер отвечает, является ли оно простым или нет.
+                    Чтобы закончить выполнение программы, введите 0
                     Давайте приступим,\s""");
             Scanner scanner = new Scanner(System.in);
             int number;
-            String multipliers;
+            String answer;
             while (true) {
                 System.out.print("Введите число: ");
                 while ((number = scanner.nextInt()) < 0) {
@@ -35,9 +35,8 @@ public class Client {
                     System.out.println("\nВы ввели 0, приложение закрывается. До скорых встреч)");
                     break;
                 }
-                //не будет ли проблем если сразу читаем?
-                multipliers = inputSocket.readLine();
-                //TODO:делить строку в соответствии с учетом кол-ва разных простых чисел и выводить их
+                answer = inputSocket.readLine();
+                System.out.println(answer);
             }
         } catch (IOException e) {
             e.printStackTrace(); //TODO:что-то другое делать возможно
