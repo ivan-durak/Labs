@@ -7,6 +7,7 @@ import java.net.Socket;
 public class ConsistentServer {
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(11000)) {
+            System.out.println("Сервер запущен. Ждем клиентов");
             while (true) {
                 Socket socket = serverSocket.accept();
                 System.out.println("Подключился клиент. Сокет на стороне сервера открыт");
@@ -18,7 +19,7 @@ public class ConsistentServer {
                     System.out.println("Получили число " + number);
                     outputSocket.write(isSimple(number));
                     outputSocket.flush();
-                    System.out.println("Отправили ответ " + number);
+                    System.out.println("Отправили ответ по " + number);
                 }
                 System.out.println("Пришел 0. Серверный сокет закрывается. Ждем следующего подключения\n");
             }
@@ -27,7 +28,7 @@ public class ConsistentServer {
         }
     }
 
-    private static String isSimple(int number) {
+    static String isSimple(int number) {
         if (number == 1) return "Число не является простым\n";
         int i = 2;
         while (i * i <= number) {
