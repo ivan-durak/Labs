@@ -16,7 +16,7 @@ public class ParallelServer {
                 countOfThreads++;
             }
         } catch (IOException e) {
-            throw new RuntimeException(e); //TODO:возможно по-другому обрабатывать
+            e.printStackTrace();
         }
     }
 }

@@ -26,6 +26,8 @@ public class ServerChildThread extends Thread {
     public void run() {
         System.out.println("Поток " + ordinalNumber + " начал выполнение");
         try {
+            outputSocket.write("Сервер создал отдельный поток для предоставления своего функционала\n");
+            outputSocket.flush();
             int number;
             while ((number = inputSocket.read()) != 0) {
                 System.out.println("Поток " + ordinalNumber + " получил число " + number);
@@ -36,7 +38,7 @@ public class ServerChildThread extends Thread {
             socket.close();
             System.out.println("Дочерний поток " + ordinalNumber + " закрывается");
         } catch (IOException e) {
-            e.printStackTrace(); //TODO
+            e.printStackTrace();
         }
     }
 }

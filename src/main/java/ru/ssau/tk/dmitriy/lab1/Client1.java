@@ -11,8 +11,9 @@ public class Client1 {
              BufferedWriter outputSocket = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()))) {
             System.out.println("Сокет открыт");
             System.out.println("Потоки ввода/вывода созданы");
+            System.out.println(inputSocket.readLine());
             System.out.print("""
-                    Клиент принимает натуральное число, сервер отвечает, является ли оно простым или нет.
+                    Вы можете ввести натуральное число, сервер ответит вам, является ли оно простым или нет.
                     Чтобы закончить выполнение программы, введите 0
                     Давайте приступим,\s""");
             Scanner scanner = new Scanner(System.in);
@@ -33,7 +34,7 @@ public class Client1 {
                 System.out.println(answer);
             }
         } catch (IOException e) {
-            e.printStackTrace(); //TODO:что-то другое делать возможно
+            e.printStackTrace();
         }
     }
 }

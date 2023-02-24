@@ -14,6 +14,8 @@ public class ConsistentServer {
                 BufferedReader inputSocket = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 BufferedWriter outputSocket = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
                 System.out.println("Потоки ввода/вывода созданы");
+                outputSocket.write("Сервер переключился на вас и готов с вами работать\n");
+                outputSocket.flush();
                 int number;
                 while ((number = inputSocket.read()) != 0) {
                     System.out.println("Получили число " + number);
