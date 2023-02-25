@@ -24,9 +24,12 @@ public class ConsistentServer {
                     System.out.println("Отправили ответ по " + number);
                 }
                 System.out.println("Пришел 0. Серверный сокет закрывается. Ждем следующего подключения\n");
+                inputSocket.close();
+                outputSocket.close();
+                socket.close();
             }
         } catch (IOException e) {
-            throw new RuntimeException(e); //TODO:что-то другое делать возможно
+            throw new RuntimeException(e);
         }
     }
 

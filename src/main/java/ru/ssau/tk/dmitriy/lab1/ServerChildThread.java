@@ -35,8 +35,10 @@ public class ServerChildThread extends Thread {
                 outputSocket.flush();
                 System.out.println("Поток " + ordinalNumber + " отправил ответ " + number);
             }
-            socket.close();
             System.out.println("Дочерний поток " + ordinalNumber + " закрывается");
+            inputSocket.close();
+            outputSocket.close();
+            socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
