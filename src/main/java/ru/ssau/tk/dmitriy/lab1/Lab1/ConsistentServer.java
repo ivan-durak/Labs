@@ -1,4 +1,4 @@
-package ru.ssau.tk.dmitriy.lab1;
+package ru.ssau.tk.dmitriy.lab1.Lab1;
 
 import java.io.*;
 import java.net.ServerSocket;

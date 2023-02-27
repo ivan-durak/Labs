@@ -1,10 +1,10 @@
-package ru.ssau.tk.dmitriy.lab1;
+package ru.ssau.tk.dmitriy.lab1.Lab1;
 
 import java.io.*;
-import java.net.*;
+import java.net.Socket;
 import java.util.Scanner;
 
-public class Client1 {
+public class Client2 {
     public static void main(String[] args) {
         try (Socket socket = new Socket("localhost", 11000);
              BufferedReader inputSocket = new BufferedReader(new InputStreamReader(socket.getInputStream()));
